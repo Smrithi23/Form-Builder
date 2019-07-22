@@ -1,0 +1,142 @@
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+</head>
+<style>
+    body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 20;
+        color:#026670;
+        background-color: #EDEAE5;
+    }
+
+    #formBuilder {
+        position: absolute;
+        width: 1828px;
+        height: 70px;
+        font-size: 45;
+        color: #ffffff;
+        background-color: #026670;
+        padding-top: 20px;
+        padding-left: 25px;
+    }
+
+    #welcome {
+        position: absolute;
+        top: 35px;
+        right: 50px;
+        color: #ffffff;
+        font-size: 23;
+    }
+
+    #options {
+        position: absolute;
+        top: 90px;
+        background-color: #fce181;
+        height: 50px;
+        width: 1853px;
+    }
+
+    #logout {
+        position: absolute;
+        top: 13px;
+        right: 350px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color:#026670;
+        font-size: 23;
+    }
+
+    #logoutAll {
+        position: absolute;
+        top: 13px;
+        right: 80px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23;
+    }
+
+    #changeProfile {
+        position: absolute;
+        top: 13px;
+        right: 460px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23;
+    }
+
+    #createForm {
+        position: absolute;
+        top: 13px;
+        left: 80px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23;
+    }
+
+    table {
+        position: absolute;
+        top: 200px;
+        left: 630px;
+    }
+
+    .button {
+        border: 0;
+        outline: 0;
+        color: #ffffff;
+        font-size: 35px;
+        height: 100px;
+        width: 600px;
+        background-color:#026670;
+    }
+</style>
+
+<body>
+    <div id="formBuilder">
+        Form Builder
+    </div>
+    <div id="welcome">
+        Welcome {{user.name}}
+    </div>
+    <div id="options">
+        <form method="post" action="/users/logout">
+            <input id="logout" type="submit" value="Logout   |">
+        </form>
+        <form method="post" action="/users/logoutAll">
+            <input id="logoutAll" type="submit" value="Logout from all sessions">
+        </form>
+        <form method="get" action="/users/me">
+            <input id="changeProfile" type="submit" value="Change Profile   |">
+        </form>
+        <form method="get" action="/form">
+            <input id="createForm" type="submit" value="Create a New Form">
+        </form>
+    </div>
+    <table>
+
+        {{#each user.forms}}
+        <tr>
+            <td>
+                <form method="get" action="/form/{{this._id}}">
+                    <input class="button" type="submit" value={{this.title}}>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Builder</title>
+</head>
+<style>
+    body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 20;
+        color:#026670;
+        background-color: #EDEAE5;
+    }
+
+    #Form-Builder {
+        position: absolute;
+        width: 1828px;
+        height: 70px;
+        font-size: 45;
+        color: #ffffff;
+        background-color: #026670;
+        padding-top: 20px;
+        padding-left: 25px;
+    }
+
+    #login-form {
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        height: 400px;
+        width: 380px;
+        background-color: #ffffff;
+        border: 1px solid #9fedd7;
+        outline: 0;
+        padding: 25px;
+    }
+
+    #register-form {
+        position: absolute;
+        top: 200px;
+        left: 1100px;
+        height: 400px;
+        width: 380px;
+        background-color: #ffffff;
+        border: 1px solid #9fedd7;
+        outline: 0;
+        padding: 25px;
+    }
+
+    #login {
+        font-size: 30px;
+        color:#026670;
+        margin-bottom: 15px;
+    }
+
+    #register {
+        font-size: 30px;
+        color:#026670;
+        margin-bottom: 15px;
+    }
+
+    input[type=submit] {
+        position: absolute;
+        top: 350px;
+        left: 70px;
+        border: none;
+        outline: 0;
+        background-color: #fce181;
+        color: #026670;
+        height: 50px;
+        width: 250px;
+        margin: 16px;
+        font-size: 20;
+    }
+
+    input[type=text] {
+        border: 1px solid rgba(0,0,0,0.2);
+        outline: 0;
+        background-color: transparent;
+        color: #000000;
+        font-size: 20;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+        border-radius: 5px;
+        width: 350px;
+    }
+
+    input[type=password] {
+        border: 1px solid rgba(0,0,0,0.2);
+        outline: 0;
+        background-color: transparent;
+        color: #000000;
+        font-size: 20;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+        border-radius: 5px;
+        width: 350px;
+    }
+
+    #loginerror {
+        position: absolute;
+        top: 800px;
+        width: 1853px;
+        text-align: center;
+        color:#026670;
+        font-size: 20;
+    }
+
+    #error {
+        position: absolute;
+        top: 800px;
+        width: 1853px;
+        text-align: center;
+        color:#026670;
+        font-size: 20;
+    }
+</style>
+
+<body>
+    <div id="error">
+        {{message}}
+        {{register}}
+        {{email}}<br>
+        {{password}}
+    </div>
+    <div id="loginerror">
+        {{loginerror}}
+    </div>
+    <div id="Form-Builder">
+        Form Builder
+    </div>
+    <form id="login-form" method="post" action="/users/login">
+        <div id="login">Login</div>
+        Email<br>
+        <input type="text" name="email" required><br>
+        Password<br>
+        <input type="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    <form id="register-form" method="post" action="/users">
+        <div id="register">Register</div>
+        Email<br>
+        <input type="text" name="email" required><br>
+        Name<br>
+        <input type="text" name="name" required><br>
+        Password<br>
+        <input type="password" name="password" required><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>

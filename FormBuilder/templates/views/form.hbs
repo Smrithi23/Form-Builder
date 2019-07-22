@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Builder</title>
+</head>
+<style>
+    body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20;
+        color: #026670;
+        background-color: #EDEAE5;
+    }
+
+    #formBuilder {
+        position: absolute;
+        width: 1828px;
+        height: 70px;
+        font-size: 45px;
+        color: #ffffff;
+        background-color: #026670;
+        padding-top: 20px;
+        padding-left: 25px;
+    }
+
+    #back {
+        position: absolute;
+        top: 30px;
+        right: 80px;
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 2px;
+        outline: 0;
+        color: #ffffff;
+        font-size: 25px;
+    }
+
+    #options {
+        position: absolute;
+        top: 90px;
+        background-color: #fce181;
+        height: 50px;
+        width: 1853px;
+    }
+
+    #addText {
+        position: absolute;
+        top: 13px;
+        left: 70px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23px;
+    }
+
+    #addNumber {
+        position: absolute;
+        top: 13px;
+        left: 200px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23px;
+    }
+
+    #send {
+        position: absolute;
+        top: 13px;
+        right: 150px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23px;
+    }
+
+    #save {
+        position: absolute;
+        top: 13px;
+        right: 240px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23px;
+    }
+
+    #delete {
+        position: absolute;
+        top: 13px;
+        right: 70px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23px;
+    }
+
+    #viewResponse {
+        position: absolute;
+        top: 13px;
+        right: 330px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        color: #026670;
+        font-size: 23px; 
+    }
+
+    #formName {
+        position: absolute;
+        top: 185px;
+        left: 550px;
+        background-color: #ffffff;
+        width: 770px;
+    }
+
+    #form {
+        position: absolute;
+        top: 370px;
+        left: 550px;
+        background-color: #ffffff;
+        width: 730px;
+        padding-left: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+    }
+
+    #title {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 500px;
+        font-size: 40px;
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+
+    #description {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 500px;
+        color: #4d4d49;
+        font-size: 15px;
+        margin-left: 40px;
+        padding-bottom: 50px;
+    }
+
+    #formElement {
+        background-color: #ffffff;
+        height: 100px;
+        width: 770px;
+        text-align: center;
+    }
+
+    #question {
+        border: 0;
+        outline: 0;
+        padding: 35px;
+        padding-bottom: 0px;
+        background-color: transparent;
+        width: 770px;
+        font-size: 25px;
+    }
+
+    input[type=text] {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: 0;
+        background-color: transparent;
+        color: #000000;
+        font-size: 20;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+        border-radius: 5px;
+        width: 350px;
+    }
+
+    input[type=number] {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: 0;
+        background-color: transparent;
+        color: #000000;
+        font-size: 20;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+        border-radius: 5px;
+        width: 350px;
+    }
+
+    #canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1853px;
+        height: 950px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    #addTextForm,
+    #addNumberForm,
+    #sendForm,
+    #saveForm {
+        position: absolute;
+        top: 200px;
+        left: 700px;
+        width: 400px;
+        height: 500px;
+        padding: 50px;
+        background-color: #ffffff;
+        font-size: 20px;
+    }
+
+    .add,
+    #Save,
+    #Send {
+        position: absolute;
+        top: 430px;
+        left: 50px;
+        border: none;
+        outline: 0;
+        background-color: #fce181;
+        color: #026670;
+        height: 50px;
+        width: 350px;
+        margin: 16px;
+        font-size: 20px;
+    }
+
+    .back {
+        position: absolute;
+        top: 500px;
+        left: 50px;
+        border: none;
+        outline: 0;
+        background-color: #fce181;
+        color: #026670;
+        height: 50px;
+        width: 350px;
+        margin: 16px;
+        font-size: 20px;
+    }
+
+    #wantToSave {
+        position: absolute;
+        top: 50px;
+        left: 100px;
+        font-size: 30px;
+    }
+
+    .remove {
+        position: absolute;
+        left: 500px;
+        border: 0;
+        outline: 0;
+        background-color:#fce181;
+        height: 30px;
+        width: 140px;
+        border-radius: 3px;
+    }
+
+</style>
+<script>
+    function load() {
+        document.getElementById('canvas').style.display = 'none';
+        document.getElementById('addTextForm').style.display = 'none';
+        document.getElementById('addNumberForm').style.display = 'none';
+        document.getElementById('saveForm').style.display = 'none';
+        document.getElementById('sendForm').style.display = 'none';
+        document.getElementById('formid').style.display = 'none';
+        document.getElementById('link').style.display = 'none';
+        document.getElementById('hide').style.display = 'none';
+    }
+    function addText() {
+        document.getElementById('question1').value = '';
+        document.getElementById('canvas').style.display = 'inline';
+        document.getElementById('addTextForm').style.display = 'inline';
+    }
+    function addNumber() {
+        document.getElementById('question2').value = '';
+        document.getElementById('canvas').style.display = 'inline';
+        document.getElementById('addNumberForm').style.display = 'inline';
+    }
+    function backaddText() {
+        document.getElementById('canvas').style.display = 'none';
+        document.getElementById('addTextForm').style.display = 'none';
+    }
+    function backaddNumber() {
+        document.getElementById('canvas').style.display = 'none';
+        document.getElementById('addNumberForm').style.display = 'none';
+    }
+    function send() {
+        document.getElementById('to').value = '';
+        document.getElementById('canvas').style.display = 'inline';
+        document.getElementById('sendForm').style.display = 'inline';
+    }
+    function save() {
+        document.getElementById('html').value = '';
+        document.getElementById('canvas').style.display = 'inline';
+        document.getElementById('saveForm').style.display = 'inline';
+        var html = document.getElementById('form').innerHTML;
+        var title = document.getElementById('title').value;
+        var description = document.getElementById('description').value;
+        document.getElementById('html').value = html;
+        document.getElementById('Title').value = title;
+        document.getElementById('Description').value = description;
+    }
+    function backsendForm() {
+        document.getElementById('canvas').style.display = 'none';
+        document.getElementById('sendForm').style.display = 'none';
+    }
+    function backsaveForm() {
+        document.getElementById('canvas').style.display = 'none';
+        document.getElementById('saveForm').style.display = 'none';
+    }
+    function addTextForm() {
+        if (document.getElementById('question1').value === '') {
+            alert('Enter question');
+
+        } else {
+            var question = document.getElementById('question1').value;
+            var newTextBox = document.createElement('div');
+            newTextBox.id = question;
+            newTextBox.innerHTML = question + "<br><input type='text' name='"+question+"'><input class=\"remove\" type='button' value='Remove' onclick='document.getElementById(\""+question+"\").remove();'>";
+            document.getElementById('form').appendChild(newTextBox);
+            document.getElementById('addTextForm').style.display = 'none';
+            document.getElementById('canvas').style.display = 'none';
+        }
+    }
+    function addNumberForm() {
+        if (document.getElementById('question2').value === '') {
+            alert('Enter question');
+
+        } else {
+            var question = document.getElementById('question2').value;
+            var newTextBox = document.createElement('div');
+            newTextBox.id = question;
+            newTextBox.innerHTML = question + "<br><input type='number' name='"+question+"'><input class=\"remove\" type='button' value='Remove' onclick='document.getElementById(\""+question+"\").remove();'>";
+            document.getElementById('form').appendChild(newTextBox);
+            document.getElementById('addNumberForm').style.display = 'none';
+            document.getElementById('canvas').style.display = 'none';
+        }
+    }
+    
+</script>
+
+<body onload="load();">
+    <div id="formBuilder">
+        Form Builder
+        <form method="get" action="/user">
+            <input id="back" type="submit" value="Back">
+        </form>
+    </div>
+
+    <div id="options">
+        <input id="save" type="button" value="Save   |" onclick="save();">
+        <input id="send" type="button" value="Send   |" onclick="send();">
+        <form method="get" action="/delete/{{id}}">
+            <input id="delete" type="submit" value="Delete">
+        </form>
+        <form method="get" action="/response/{{id}}">
+            <input id="viewResponse" type="submit" value="View Response   |">
+        </form>
+        <input id="addText" id="addText" type="button" value="Add Text   |" onclick="addText();">
+        <input id="addNumber" id="addNumber" type="button" value="Add Number" onclick="addNumber();">
+    </div>
+
+    <div id="formName">
+        <input id="title" type="text" value={{title}} onClick="this.setSelectionRange(0, this.value.length)"><br>
+        <input id="description" type="text" value={{description}}
+            onClick="this.setSelectionRange(0, this.value.length)"><br>
+    </div>
+
+    <div id="form">{{{html}}}</div>
+
+    <canvas id="canvas"></canvas>
+
+    <form id="addTextForm">
+        Question<br> <input id="question1" type="text"><br>
+        <input class="add" type="button" value="Add" onclick="addTextForm();">
+        <input class="back" type="button" value="Back" onclick="backaddText();">
+    </form>
+
+    <form id="addNumberForm">
+        Question<br><input id="question2" type="text"><br>
+        <input class="add" type="button" value="Add" onclick="addNumberForm();">
+        <input class="back" type="button" value="Back" onclick="backaddNumber();">
+    </form>
+
+    <form id="sendForm" method="post" action="/send/:id">
+        <input id="formid" type="text" name="formid" value='{{id}}'>
+        <input id="link" type="text" name="link" value="http://localhost:3000/{{id}}">
+        To:<br>
+        <input id="to" type="text" name="to" required><br>
+        Subject:<br>
+        <input id="sub" type="text" name="sub" required><br>
+        Message:<br>
+        <input id="message" type="text" name="message" required><br>
+        <input id="Send" type="submit" value="Send">
+        <input class="back" type="button" value="Back" onclick="backsendForm();">
+    </form>
+
+    <form id="saveForm" method="post" action="/form">
+        <div id="wantToSave">
+            Do you want to save?
+        </div>
+        <div id="hide">
+            <input id="Title" type="text" name="title">
+            <input id="Description" type="text" name="description">
+            <input id="html" type="text" name="html">
+            <input id="id" type="text" name="id" value="{{id}}">
+        </div>
+
+        <input id="Save" type="submit" value="Save">
+        <input class="back" type="button" value="Back" onclick="backsaveForm();">
+    </form>
+</body>
+
+</html>

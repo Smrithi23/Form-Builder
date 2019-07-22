@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Builder</title>
+</head>
+<style>
+    body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        color: #026670;
+        background-color: #EDEAE5;
+    }
+
+    #formBuilder {
+        position: absolute;
+        width: 1828px;
+        height: 70px;
+        font-size: 45px;
+        color: #ffffff;
+        background-color: #026670;
+        padding-top: 20px;
+        padding-left: 25px;
+    }
+
+    #formName {
+        position: absolute;
+        top: 185px;
+        left: 550px;
+        background-color: #ffffff;
+        width: 770px;
+        height: 180px;
+    }
+
+    #form {
+        position: absolute;
+        top: 365px;
+        left: 550px;
+        background-color: #ffffff;
+        width: 730px;
+        padding-left: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+    }
+
+    #title {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 500px;
+        font-size: 50px;
+        margin-left:40px;
+        margin-top: 40px;
+    }
+
+    #description {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 500px;
+        color: #4d4d49;
+        font-size: 22px;
+        margin-left:40px;
+        padding-bottom: 50px;
+    }
+    
+    input[type=text] {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: 0;
+        background-color: transparent;
+        color: #000000;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 7px;
+        border-radius: 5px;
+        width: 400px;
+    }
+
+    input[type=number] {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: 0;
+        background-color: transparent;
+        color: #000000;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 7px;
+        border-radius: 5px;
+        width: 400px;
+    }
+
+    #sendResponse {
+        position: absolute;
+        top: 25px;
+        right: 80px;
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 2px;
+        outline: 0;
+        color: #ffffff;
+        font-size: 25px;
+        padding: 5px;
+    }
+    
+    #message {
+        position: absolute;
+        top: 290px;
+        left: 710px;
+        font-size: 40px;
+    }
+
+</style>
+<script>
+    function load() {
+        document.querySelectorAll(".remove").forEach(e => e.parentNode.removeChild(e));
+    }
+</script>
+
+<body onload="load();">
+    <div id="formBuilder">
+        Form Builder
+    </div>
+
+    <div id="formName">
+        <div id="title">
+            {{title}}
+        </div>
+        <br>
+        <div id="description"> 
+            {{description}}
+        </div>
+    </div>
+
+    <form method="post" action="/responses/{{id}}">
+        <div id="form">{{{html}}}</div>
+        <input id="sendResponse" type="submit" value="Send Response">
+    </form>
+
+    <div id="message">
+        {{message}}
+    </div>
+
+</body>
+
+</html>

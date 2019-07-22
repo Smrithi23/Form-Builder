@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+</head>
+<style>
+    body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20;
+        color: #026670;
+        background-color: #EDEAE5;
+    }
+
+    #formBuilder {
+        position: absolute;
+        width: 1828px;
+        height: 70px;
+        font-size: 45px;
+        color: #ffffff;
+        background-color: #026670;
+        padding-top: 20px;
+        padding-left: 25px;
+    }
+
+    #back {
+        position: absolute;
+        top: 30px;
+        right: 80px;
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 2px;
+        outline: 0;
+        color: #ffffff;
+        font-size: 25;
+    }
+
+    #message {
+        position: absolute;
+        top: 290px;
+        width: 1853px;
+        text-align: center;
+        color:#026670;
+        font-size: 40px;
+    }
+</style>
+
+<body>
+    <div id="message">
+        Deleted
+    </div>
+    <div id="formBuilder">
+        Form Builder
+        <form method="get" action="/user">
+            <input id="back" type="submit" value="Back">
+        </form>
+    </div>
+</body>
+
+</html>
